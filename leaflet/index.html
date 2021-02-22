@@ -75,6 +75,17 @@
 
         var polygon = L.polygon(latlngs, {color: 'blue'}).addTo(map);
 
+
+
+        // create a red polyline from an array of LatLng points
+        var latlngs = [
+        [35.910954, -79.047922],
+        [35.910626, -79.050398],
+        [35.908593, -79.049212]
+];
+
+var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+
         
             // L.geoJSON(davislibrary).addTo(map)
         // L.geoJSON(davislibrary, { // a
