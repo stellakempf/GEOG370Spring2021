@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([35.767924947518566, -78.64339216646057], 14.0);
+
+      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	      maxZoom: 19,
+	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+      
+      var daPhoto = L.tileLayer('./tiles_hw4/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      }).addTo(map);
+
+
+
+      var Icon1 = L.icon({
+          iconURL: 'https://cdn.iconscout.com/icon/premium/png-256-thumb/intersection-7-1158083.png',
+          iconSize: [50,50],
+          popupAnchor: [0,0]
+      });
+
+      var Popup1 = "Overlapping Intersection <br/><img src='https://dtraleigh.com/images/five_horizons_saunders/five_horizons_pd_saunders_map1.jpg'width='100px'/>"
+
+      var Marker1 = L.marker([35.769294, -78.644722], {icon:Icon1}).addTo(map)
+        .bindPopup(Popup1)
+        //.openPopup();
+
+      var Icon2 = L.icon({
+          iconURL: 'https://cdn4.iconfinder.com/data/icons/landscape/600/landscape-nature-clouds-forest-environment-garden-park-512.png',
+          iconSize: [50,50],
+          popupAnchor: [0,0]
+      });
+
+      var Popup2 = "Moore Square <br/><img src='https://www.cbs17.com/wp-content/uploads/sites/29/2019/08/Moore-Square-sky-eye-17-1.jpg'width='100px'/>"
+
+      var Marker2 = L.marker([35.777395, -78.635843], {icon:Icon2}).addTo(map)
+        .bindPopup(Popup2)
+        //.openPopup();
+
+      var Icon3 = L.icon({
+        iconURL: 'https://static.thenounproject.com/png/12741-200.png',
+        iconSize: [50,50],
+        popupAnchor: [0,0]
+      });
+
+      var Popup3 = "NC State Capital <br/><img src='https://assets.simpleviewinc.com/simpleview/image/fetch/q_75/https://assets.simpleviewinc.com/simpleview/image/upload/crm/raleigh/NC-State-Capitol-29_7b223d0b-9ef5-18dc-e5c70fa4eebb3ab4.jpg'width='100px'/>"
+
+      var Marker3 = L.marker([35.780320, -78.639058], {icon:Icon3}).addTo(map)
+        .bindPopup(Popup3)
+        //.openPopup();
+      
+     
+
+      var daTiles = {
+        "Open Street Map": OSM,
+        "Raleigh Photo": daPhoto
+      }
+
+      var daVectors = {
+        "Overlapping Intersection": Marker1,
+        "Moore Square": Marker2,
+        "NC State Capital": Marker3
+      }
+
+      L.control.layers(daTiles, daVectors).addTo(map);
+
+
+  </script>
+</body>
+</html>
