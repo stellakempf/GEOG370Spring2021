@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 8</title>
+</head>
+<body>
+<h1>Homework 8: Census data ratios and categories </h1>
+<h2>Stella Kempf</h2>
+<h3>The ratio that I chose to do for this assignment was deg/tot_21, or the number of people that have a
+    bachelors degree in Colorado divided by the total number of people over the age of 21 in Colorado. I
+    chose to do my ratio this way because because almost no one under the age of 21 is old enough to have
+    graduated college with a bachelors degree, so creating the ratio with only the total population over
+    21 gives us a more accurate representation of the number of adults in Colorado with a degree. Additionally,
+    after I divided the total number of degree holders by the total population over 21, I multiplied the
+    ratio by 100 so the resulting choreopleth numbers would be larger and produce more visible diversity.
+</h3>
+
+<h4>For my first map I used the jenks categorization for the choreopleth. The jenks type of classification
+    focuses on natural breaks in the data to form different sets of values. The pros of using jenks is that
+    it is good for mapping unequal distributions of data since it can create its own breaks. The cons of
+    using jenks is that it is hard to choose the correct number of breaks for a data set. In this case, I 
+    chose six because there are 64 counties in Colorado.
+</h4>
+<!-- Your map goes here -->
+<a href="./jenks_cat2.png">
+    <img src="./jenks_cat2.png" alt="your map" width='500px'>
+    </a>
+
+<h4>For my second map I used the equal counts (quantile) categorization for the choreopleth. The equal breaks
+    type of classification means that each set of breaks contains the same number of values. The pros of using
+    equal counts is that it produces fairly distributed data because of the equal number of values. The cons of
+    equal counts is that sometimes values that are similar can end up in different sets because they just missed
+    the cutoff for the equal values. 
+</h4>
+<!-- Your map goes here -->
+<a href="./equal_count_cat2.png">
+    <img src="./equal_count_cat2.png" alt="your map" width='500px'>
+    </a>
+
+<h4>For my third map I used the logarithmic categorization for the choreopleth. The logarithmic type of classification
+    creates breaks based on log functions done by QGIS. This type of categorization is not very commonly used. 
+    The pros for logarithmic categorization is that it is good for displaying datasets with very small values.
+    The cons of logarithmic is that it cannot show values of 0, and the breaks for each set of values are extremely
+    large. For example, I tried to have 6 classes, but it would only produce 4. In hindsight, I would not have
+    used this categorization for my map because of these limitations.
+</h4>
+<!-- Your map goes here -->
+<a href="./log_cat2.png">
+    <img src="./log_cat2.png" alt="your map" width='500px'>
+    </a>
+
+<h2>Data used for this project</h2>
+<a href="./ACSST5Y2019.S0101_data_with_overlays_2021-03-16T125512 - ACSST5Y2019.S0101_data_with_overlays_2021-03-16T125512.csv"> CSV dataset </a>
+<p></p>
+
+</body>
+</html>
