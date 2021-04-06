@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+</head>
+<body>
+<h1>Homework 10: Geoprocessing Analysis </h1>
+<h2>Stella Kempf</h2>
+<h3>This map aims to answer the question: How many buffered REE (Rare Earth Element) points fall within
+    the Yukon-Koyukuk county boundaries? To answer this question, I first imported a shapefile map of Alaska
+    and a shapefile containing the points of all the REE occurences in the U.S.. I then selected the
+    Yukon-Koyukuk county and preformed an intersection of the county and the REE points. After I completed
+    the intersection, I then took the newly intersected points and added a 25 mile buffer around them. Once 
+    I had changed the colors of the newly buffered REE points, I was then able to count how many fell within
+    Yukon-Koyukuk county. The answer to my question is that 13 buffered REE points fall within Yukon-Koyukuk
+    county. I chose to use a buffer of 25 miles because Yukon-Koyukuk county has an area of 147,805 sq mi,
+    making it the largest county in the United States. I also chose to keep the original REE points because it
+    allowed for a great comparison of how many more REE points Yukon-Koyukuk county has compared to the other
+    counties in Alaska. 
+</h3>
+<!-- Your map goes here -->
+<a href="./hw10_map.png">
+    <img src="./hw10_map.png" alt="your map" width='700px'>
+    </a>
+
+<!-- Link to your shapefile in Github and your CSV -->
+<h2>Data used for this project</h2>
+    <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html"> Link to website where I found the Alaska data </a>
+    <p></p>
+    <a href="https://www.sciencebase.gov/catalog/item/5a133f8ae4b09fc93dce6552"> Link to website where I found the REE data </a>
+    <p></p>
+
+</body>
+</html>
